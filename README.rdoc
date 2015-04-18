@@ -12,3 +12,13 @@ description: text
 - description must be present
 - description must be between 20 and 500 characters
 - user_id must be present
+
+
+
+== 2nd README
+
+- username must be present
+- username must be between 3 characters and less than 40 characters
+- email must be present
+- email must be unique (since we'll use this for login later)
+- email must be valid

@@ -22,6 +22,14 @@
         <strong>Post:</strong>
       </p>
       <%= simple_format(@post.description) %>
+      <div class="pull-right">
+        <%= link_to like_post_path(@post, like: true), method: :post do %>
+          <i class="glyphicon glyphicon-thumbs-up"></i> &nbsp <%= @post.thumbs_up_total %> 
+        <% end %> &nbsp&nbsp&nbsp&nbsp
+        <%= link_to like_post_path(@post, like: false), method: :post do %>
+          <i class="glyphicon glyphicon-thumbs-down"></i> &nbsp <%= @post.thumbs_down_total %>
+        <% end %>  
+      </div>
     </div>
   </div>
   

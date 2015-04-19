@@ -10,12 +10,16 @@
       </section>
     </div>
     
-    <div class="col-lg-8 well">
+    <div class="col-lg-6 well">
       <h4><%= link_to post.name, post_path(post) %></h4>
       <p><%= post.summary %></p>
       <p>
         <span class='quiet'><small> <%= time_ago_in_words(post.created_at) %> ago</small></span>
       </p>
+    </div>
+    
+    <div class="col-md-4">
+      <%= image_tag(post.picture.url, size: "250x150", class: "gravatar") if post.picture? %>
     </div>
     
   </div>

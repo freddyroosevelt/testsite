@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150419230630) do
+ActiveRecord::Schema.define(version: 20150420195508) do
 
   create_table "likes", force: true do |t|
     t.boolean  "like"
@@ -19,6 +19,16 @@ ActiveRecord::Schema.define(version: 20150419230630) do
     t.integer  "post_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "post_topics", force: true do |t|
+    t.integer "topic_id"
+    t.integer "post_id"
+  end
+
+  create_table "post_trends", force: true do |t|
+    t.integer "trend_id"
+    t.integer "post_id"
   end
 
   create_table "posts", force: true do |t|
@@ -32,6 +42,14 @@ ActiveRecord::Schema.define(version: 20150419230630) do
   end
 
   create_table "recipes", force: true do |t|
+  end
+
+  create_table "topics", force: true do |t|
+    t.string "name"
+  end
+
+  create_table "trends", force: true do |t|
+    t.string "name"
   end
 
   create_table "users", force: true do |t|

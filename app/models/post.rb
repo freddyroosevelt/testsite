@@ -1,6 +1,10 @@
 class Post < ActiveRecord::Base
   belongs_to :user
   has_many :likes
+  has_many :post_trends
+  has_many :trends, through: :post_trends
+  has_many :post_topics
+  has_many :topics, through: :post_topics
   validates :user_id, presence: true
   validates :name, presence: true, length: { minimum: 5, maximum: 100 }
   validates :summary, presence: true, length: { minimum: 10, maximum: 150 }

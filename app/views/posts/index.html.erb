@@ -24,8 +24,12 @@
     <div class="col-lg-6 well">
       <h4><%= link_to post.name, post_path(post) %></h4>
       <p><%= post.summary %></p>
-      <p>Trend: <%= render post.trends %></p>
-      <p>Topic: <%= render post.topics %></p>
+      <% if post.trends.any? %>
+        <p>Trend: <%= render post.trends %></p>
+      <% end %>
+      <% if post.topics.any? %>
+        <p>Topic: <%= render post.topics %></p>
+      <% end %>  
       <p>
         <span class='quiet'><small> created: <%= time_ago_in_words(post.created_at) %> ago, </small></span>
         <span class='quiet'><small> updated <%= time_ago_in_words(post.updated_at) %> ago</small></span>

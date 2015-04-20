@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:edit, :update, :show, :like]
-  before_action :require_user, except: [:show, :index]
+  before_action :require_user, except: [:show, :index, :like]
+  before_action :require_user_like, only: [:like]
   before_action :require_same_user, only: [:edit, :update]
   
   def index
@@ -59,7 +60,7 @@ class PostsController < ApplicationController
   private
   
     def post_params
-      params.require(:post).permit(:name, :summary, :description, :picture)
+      params.require(:post).permit(:name, :summary, :description, :picture, trend_ids: [], topic_ids: [])
     end
     
     def set_post
@@ -70,6 +71,13 @@ class PostsController < ApplicationController
       if current_user != @post.user
         flash[:danger] = "You can only edit your own profile"
         redirect_to posts_path
+      end
+    end
+    
+    def require_user_like
+      if !logged_in?
+       flash[:danger] = "You must be logged in to perform that action"
+       redirect_to :back
       end
     end
   

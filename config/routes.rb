@@ -22,5 +22,8 @@ Rails.application.routes.draw do
   post '/login', to: "logins#create"
   get '/logout', to: "logins#destroy"
   
+  resources :trends, only: [:new, :create, :show]
+  resources :topics, only: [:new, :create, :show]
+  
   
 end

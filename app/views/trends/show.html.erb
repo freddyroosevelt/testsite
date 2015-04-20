@@ -1,4 +1,4 @@
-<%= render 'shared/page_title', title: "All Post" %>
+<%= render 'shared/page_title', title: "Trends for: " + @trend.name %>
 
 <ul class="nav nav-tabs">
   <li class='active'>
@@ -9,9 +9,9 @@
   </li>
 </ul>
 
-<%= will_paginate %>
+<%= will_paginate @posts %>
 
-<% @posts.each do |post| %>
+<% @trend.posts.each do |post| %>
   <div class="row">
     
     <div class="col-md-2">
@@ -48,4 +48,4 @@
   <hr/>
 <% end %>
 
-<%= will_paginate %>
+<%= will_paginate @posts %>

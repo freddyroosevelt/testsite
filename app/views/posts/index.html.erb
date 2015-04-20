@@ -7,7 +7,7 @@
     
     <div class="col-md-2">
       <section class="user_info center">
-        <%= gravatar_for post.user, size: 100 %>
+        <%= link_to gravatar_for(post.user, size: 100), user_path(post.user) %>
         <h5>User name: <%= post.user.username %></h5>
       </section>
     </div>

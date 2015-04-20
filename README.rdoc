@@ -22,3 +22,20 @@ description: text
 - email must be present
 - email must be unique (since we'll use this for login later)
 - email must be valid
+
+== Users:
+
+What we have already:
+- User model and validates
+- Users table with columns username and email
+
+What we need to do:
+- Add passwords to users table so users can be authenticated and logged in
+- Use email as login credentials, since email is unique
+- Ability to register new users to use app
+- Ability to display user profiles
+- Ability to list users using the app
+- Ability for users to log in and out of the app
+- Restrict actions like create post, edit post, and like fetures to logged in users only
+- Restricting edit of posts by users who created the posts 
+

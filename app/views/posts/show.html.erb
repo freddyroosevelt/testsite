@@ -13,7 +13,7 @@
     <% if logged_in? and (@post.user == current_user || current_user.admin?) %>
       <%= link_to "Edit Post", edit_post_path(@post), class: "btn btn-success pull-right" %>
     <% end %> 
-    <% if current_user.admin? %>
+    <% if logged_in? and current_user.admin? %>
       <%= link_to "[Delete Post]", @post, method: :delete, data: {confirm: "Are you sure?" } %>
     <% end %>
     <h3><%= @post.summary %></h3>

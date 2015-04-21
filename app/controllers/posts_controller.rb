@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   before_action :require_user, except: [:show, :index, :like]
   before_action :require_user_like, only: [:like]
   before_action :require_same_user, only: [:edit, :update]
+  before_action :admin_user, only: :destroy
   
   def index
     @posts = Post.paginate(page: params[:page], per_page: 4)
@@ -56,6 +57,12 @@ class PostsController < ApplicationController
     end
   end
   
+  def destroy
+    Post.find(params[:id]).destroy
+    flash[:success] = "Post has been deleted"
+    redirect_to posts_path
+  end
+  
   
   private
   
@@ -68,7 +75,7 @@ class PostsController < ApplicationController
     end
     
     def require_same_user
-      if current_user != @post.user
+      if current_user != @post.user and !current_user.admin?
         flash[:danger] = "You can only edit your own profile"
         redirect_to posts_path
       end
@@ -79,6 +86,10 @@ class PostsController < ApplicationController
        flash[:danger] = "You must be logged in to perform that action"
        redirect_to :back
       end
+    end
+    
+    def admin_user
+      redirect_to posts_path unless current_user.admin?
     end
   
   

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :users, except: [:new]
+  resources :users, except: [:new, :destroy]
   
   get '/register', to: 'users#new'
   

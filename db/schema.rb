@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150420195508) do
+ActiveRecord::Schema.define(version: 20150420235705) do
 
   create_table "likes", force: true do |t|
     t.boolean  "like"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20150420195508) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password_digest"
+    t.boolean  "admin"
   end
 
 end

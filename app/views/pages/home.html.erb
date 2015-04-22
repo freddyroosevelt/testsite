@@ -1,9 +1,9 @@
 <div class="center jumbotron">
   
-  <h1>Welcome to the Livin Room</h1>
+  <h1>Welcome to the Living Room</h1>
   
   <h2>
-    This is the home page where you can create your own space
+    Meet new friends and come together in the Living Room.
   </h2>
   
   <%= link_to "Sign up now!", register_path, class: "btn btn-lg btn-success" %>
@@ -18,8 +18,8 @@
       View Post as Guest
     </h3>
     
-    <h2 class="left">Browse as guest and Sign up later</h2>
-    <p><%= link_to "Browse All Posts", posts_path, class: "btn btn-warning btn-small" %></p>
+    <h2 class="left">Browse as a guest and Sign up later.</h2>
+    <p><%= link_to "Browse All Posts", posts_path, class: "btn btn-danger btn-small" %></p>
     
   </div>
   
@@ -27,11 +27,11 @@
   <div class="col-lg-4">
     
     <h3 class="midrow">
-      This is extra tab
+      What's New
     </h3>
     
-    <h2 class="left">View extra Tab</h2>
-    <p><%= link_to "Extra Tab Post", "", class: "btn btn-warning btn-small" %></p>
+    <h2 class="left">See what others are posting now.</h2>
+    <p><%= link_to "Search Whats New", posts_path, class: "btn btn-danger btn-small" %></p>
     
   </div>
   
@@ -42,8 +42,8 @@
       Login To Your Account
     </h3>
     
-    <h2 class="left">Add/Update your Posts/Create Reviews/Like/Dislike posts and much much more!</h2>
-    <p><%= link_to "Login to your account", login_path, class: "btn btn-warning btn-small" %></p>
+    <h2 class="left">Add/Update/Comment/Like/Dislike Posts!</h2>
+    <p><%= link_to "Login to your account", login_path, class: "btn btn-danger btn-small" %></p>
     
   </div>
   

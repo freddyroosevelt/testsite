@@ -2,11 +2,12 @@
     
     <div class="container">
       
-      <%= link_to "Living Room", root_path, class: "btn btn-lg btn-success", id: "logo" %>
+      <%= link_to "Living Room", root_path, class: "btn btn-lg btn-inverse", id: "logo" %>
+      
       
       <ul class="nav_ul_item">
         <li class="dropdown">
-            <%= link_to '#', class: "btn btn-default btn-danger dropdown-toggle", "data-toggle" => "dropdown" do %>
+            <%= link_to '#', class: "btn btn-default btn-inverse dropdown-toggle", "data-toggle" => "dropdown" do %>
               Trends <b class="caret"></b>
             <% end %>
             <ul class="dropdown-menu">
@@ -27,7 +28,7 @@
       
       <ul class="nav_ul_item">
         <li class="dropdown">
-            <%= link_to '#', class: "btn btn-default btn-danger dropdown-toggle", "data-toggle" => "dropdown" do %>
+            <%= link_to '#', class: "btn btn-default btn-inverse dropdown-toggle", "data-toggle" => "dropdown" do %>
               Topics <b class="caret"></b>
             <% end %>
             <ul class="dropdown-menu">
@@ -48,11 +49,11 @@
       
       <% if logged_in? %>
         <div class="nav_item">
-          <%= link_to "New Post", new_post_path, class: "btn btn-default btn-warning" %>
+          <%= link_to "New Post", new_post_path, class: "btn btn-default btn-inverse" %>
         </div>
         <ul class="nav_item">
           <li class="dropdown">
-            <%= link_to '#', class: "btn btn-default btn-danger dropdown-toggle", "data-toggle" => "dropdown" do %>
+            <%= link_to '#', class: "btn btn-default btn-primary dropdown-toggle", "data-toggle" => "dropdown" do %>
               <%= current_user.username %> <b class="caret"></b>
             <% end %>
             <ul class="dropdown-menu">
@@ -65,8 +66,9 @@
         </ul>
       <% else %>
         <div class="nav_item">
-          <%= link_to "Login", login_path, class: "btn btn-default btn-success" %>
+          <%= link_to "Login", login_path, class: "btn btn-default btn-inverse" %>
         </div>
-      <% end %>  
+      <% end %>
+
     </div>
-  </header>
+</header>
